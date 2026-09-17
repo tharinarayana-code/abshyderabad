@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS Hyderabad Chapter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f6fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .main-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .intro {
+            text-align: center;
+        }
+        
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .intro h2 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .intro p {
+            text-align: justify;
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 50px 0 30px 0;
+            color: #1a1a1a;
+        }
+        
+        .sub-title {
+            text-align: center;
+            font-size: 1.3em;
+            margin: 30px 0 20px 0;
+            color: #2c3e50;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: #b8c9dc;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .flex {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .event-card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            min-width: 180px;
+            text-align: center;
+            font-weight: 500;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .gallery-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 999;
+        }
+        
+        .gallery-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+        }
+        
+        .gallery-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            width: 280px;
+            text-align: center;
+        }
+        
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .contact-card p {
+            color: #555;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        
+        .contact-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.4em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .contact-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">
+        ASSOCIATION OF BRITISH SCHOLARS : HYDERABAD CHAPTER
+    </h1>
+    
+    <div class="card intro">
+        <img src="loogo.jpg" alt="ABS Hyderabad Chapter Logo" class="logo">
+        
+        <h2>Welcome to ABS Hyderabad Chapter : Connecting Intellectuals, Building Futures</h2>
+        
+        <p>
+            The Association of British Scholars (ABS) Hyderabad Chapter is a dynamic organisation 
+            fostering a vibrant network for Indian professionals with UK education. It goes beyond a typical 
+            membership, organizing workshops, seminars and facilitates knowledge exchange. The 
+            members are encouraged to get updated on industry, education, research in their 
+            advancements, Collaborations and innovations.
+        </p>
+        
+        <p>
+            The returnly Scholars share their knowledge, experience gained from United Kingdom for the 
+            benefit of individuals, society in our Country.
+        </p>
+        
+        <p>
+            ABS Hyderabad Chapter also bridges the cultural gap between India and the UK. Social events 
+            and discussion meetings promote mutual understanding and appreciation. This enriches 
+            members lives and fosters globally connected community. They inturn contribute to a more 
+            vibrant and interconnected Hyderabad.
+        </p>
+    </div>
+    
+    <h2 class="section-title">Managing Committee</h2>
+    <div class="card">
+        <table>
+            <tr>
+                <th>ROLE</th>
+                <th>NAME</th>
+            </tr>
+            <tr>
+                <td>President</td>
+                <td>Sri R. Vijayanandan Reddy</td>
+            </tr>
+            <tr>
+                <td>Vice-President</td>
+                <td>Sri Harsha Bathula</td>
+            </tr>
+            <tr>
+                <td>Secretary</td>
+                <td>Sri Chakravarthi JNBK</td>
+            </tr>
+            <tr>
+                <td>Treasurer</td>
+                <td>Dr. TRK Chetty</td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2 class="section-title">Executive Committee</h2>
+    <div class="card">
+        <table>
+            <tr>
+                <th>NAME</th>
+            </tr>
+            <tr><td>Sri AB Daniel</td></tr>
+            <tr><td>Sri CLN Gandhi</td></tr>
+            <tr><td>Dr. T. Harinarayana</td></tr>
+            <tr><td>Prof. N. Laxman Rao</td></tr>
+            <tr><td>Dr. TVM Murthy</td></tr>
+            <tr><td>Sri Kilaru Rama Rao</td></tr>
+            <tr><td>Sri Umapathi Sattaru</td></tr>
+            <tr><td>Prof. Zia Husam</td></tr>
+        </table>
+    </div>
+    
+    <h2 class="section-title">Events</h2>
+    
+    <h3 class="sub-title">Upcoming Events</h3>
+    <div class="flex">
+        <div class="event-card" onclick="openModal('ec3.jpeg')">EC Meeting 3</div>
+    </div>
+    
+    <h3 class="sub-title">Past Events</h3>
+    <div class="flex">
+        <div class="event-card" onclick="openModal('abs.jpeg')">Team ABS Meet</div>
+        <div class="event-card" onclick="openModal('ec1.jpeg')">EC meeting 1</div>
+        <div class="event-card" onclick="openModal('ec2.jpeg')">EC meeting 2</div>
+        <div class="event-card" onclick="window.location.href='abs-meet-2026.html'">Team ABS Meet 2026</div>
+    </div>
+    
+    <h2 class="section-title">Contact Us</h2>
+    <div class="flex">
+        <div class="contact-card">
+            <h3>Contact us</h3>
+            <p><strong>President</strong><br>9246540446</p>
+            <p><strong>Vice President</strong><br>9492324321</p>
+            <p><strong>Secretary</strong><br>9490309900</p>
+            <p><strong>Treasurer</strong><br>9885676086</p>
+        </div>
+        
+        <div class="contact-card">
+            <h3>Email</h3>
+            <p>E-mail us [at]</p>
+            <p><a href="mailto:abshyd2024@gmail.com">abshyd2024@gmail.com</a></p>
+        </div>
+        
+        <div class="contact-card">
+            <h3>Visit</h3>
+            <p>ABS HYDERABAD OFFICE</p>
+            <p><a href="#" onclick="alert('Add your office location here'); return false;">View Location</a></p>
+        </div>
+    </div>
+    
+    <!-- Modal for displaying images -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <!-- Gallery Button -->
+    <div class="gallery-btn" onclick="openGallery()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/>
+        </svg>
+    </div>
+    
+    <script>
+        function openModal(imageSrc) {
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = imageSrc;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+        
+        function openGallery() {
+            // Open Google Drive folder in a new tab
+            window.open('https://drive.google.com/drive/folders/1FyEOGFTAKsn-HxQ0NIWqLvH7jkEwqQK8', '_blank');
+        }
+        
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
